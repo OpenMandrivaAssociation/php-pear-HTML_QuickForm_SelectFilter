@@ -7,7 +7,7 @@ Summary:	%{_pearname} - dynamic filters on the client side for select elements
 Name:		php-pear-%{_pearname}
 Version:	1.0.0
 %define		_pre	RC1
-Release:	%mkrel 8
+Release:	%mkrel 9
 License:	PHP License
 Group:		Development/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}%{_pre}.tar.bz2
