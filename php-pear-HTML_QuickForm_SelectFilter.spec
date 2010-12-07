@@ -5,7 +5,7 @@
 
 Name:		php-pear-%{upstream_name}
 Version:	1.0.0
-Release:	%mkrel 11
+Release:	%mkrel 12
 Summary:	Dynamic filters on the client side for select elements
 License:	PHP License
 Group:		Development/PHP
