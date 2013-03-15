@@ -5,7 +5,7 @@
 
 Name:		php-pear-%{upstream_name}
 Version:	1.0.0
-Release:	%mkrel 14
+Release:	15
 Summary:	Dynamic filters on the client side for select elements
 License:	PHP License
 Group:		Development/PHP
@@ -16,7 +16,6 @@ Requires(preun): php-pear
 Requires:	php-pear
 BuildArch:	noarch
 BuildRequires:	php-pear
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 The PEAR::HTML_QuickForm_SelectFilter package adds an element to the
@@ -28,7 +27,6 @@ the client side for select elements.
 mv package.xml %{upstream_name}-%{version}%{_pre}/%{upstream_name}.xml
 
 %install
-rm -rf %{buildroot}
 
 cd %{upstream_name}-%{version}%{_pre}
 pear install --nodeps --packagingroot %{buildroot} %{upstream_name}.xml
@@ -41,21 +39,8 @@ install -d %{buildroot}%{_datadir}/pear/packages
 install -m 644 %{upstream_name}.xml %{buildroot}%{_datadir}/pear/packages
 
 %clean
-rm -rf %{buildroot}
 
-%post
-%if %mdkversion < 201000
-pear install --nodeps --soft --force --register-only \
-    %{_datadir}/pear/packages/%{upstream_name}.xml >/dev/null || :
-%endif
 
-%preun
-%if %mdkversion < 201000
-if [ "$1" -eq "0" ]; then
-    pear uninstall --nodeps --ignore-errors --register-only \
-        %{upstream_name} >/dev/null || :
-fi
-%endif
 
 %files
 %defattr(-,root,root)
