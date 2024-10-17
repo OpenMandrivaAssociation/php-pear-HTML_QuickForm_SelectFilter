@@ -9,7 +9,7 @@ Release:	16
 Summary:	Dynamic filters on the client side for select elements
 License:	PHP License
 Group:		Development/PHP
-URL:		http://pear.php.net/package/HTML_QuickForm_SelectFilter/
+URL:		https://pear.php.net/package/HTML_QuickForm_SelectFilter/
 Source0:	http://download.pear.php.net/package/%{upstream_name}-%{version}%{_pre}.tar.bz2
 Requires(post): php-pear
 Requires(preun): php-pear
